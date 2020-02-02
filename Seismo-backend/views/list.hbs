@@ -1,0 +1,22 @@
+<h1> 
+    Earthquakes 
+</h1>
+
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Magnitude</th>
+        <th>Municipality</th>
+        <th>Felt</th>
+        <th>Generated</th>
+    </tr>
+    {{#each data}} 
+    <tr>
+        <td>{{this.metadata.title}}</td>
+        <td>{{this.features.properties.mag}}</td>
+        <td>{{this.features.properties.municipality}}</td>
+        <td>{{this.features.properties.felt}}</td>
+        <td>{{this.metadata.generated}}</td>
+    </tr>
+    {{/each}}
+</table>
