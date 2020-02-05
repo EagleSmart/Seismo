@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 
 var UserSchema = new mongoose.Schema({
-    user_id: String,
+   // user_id: String,
     username: String,
-    name: String, 
+    // name: String, 
     email: String,
-    pwd: String
-    
+    pwd: String,
+    // date: Date
 });
           
 

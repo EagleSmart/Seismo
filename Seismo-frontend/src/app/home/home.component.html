@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="jumbotron mt-5">
+      <div class="col-sm-8 mx-auto">
+        <h1 class="text-center">Earthquake list</h1>
+        </div>
+      </div>
+      <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Magnitude</th>
+                <th scope="col">Municipality</th>
+                <th scope="col">Coordinates</th>
+                <th scope="col">Date&Time</th>
+            </tr>
+        </thead>
+     </table>
+    <div *ngFor="let item of earthquake_list">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td scope="row"></td>
+                    <td>{{item.features.properties.mag}}</td>
+                    <td>{{item.features.properties.municipality}}</td>
+                    <td>{{item.features.geometry.coordinates}}</td>
+                    <td>{{item.features.properties.time | date : 'yyyy/MM/dd h:mm:ss a'}}</td>
+                </tr>
+            </tbody>
+        </table>
+            <form #frm="ngForm" (ngSubmit)="addComment(frm)">
+                <div class ="form-group">
+                    <label for="">Comment</label>
+                    <input type="text" class="form-control" 
+                    name="itemName"
+                    value=""
+                    ngModel>
+                </div> 
+                    <button  type="submit" name="button" class="btn btn-success">Submit comment</button>
+            </form>
+    </div>
+    <div *ngFor="let comment of comments">
+        {{comment.text}}
+    </div>
+  </div>
+
+
+  <!-- <app-esri-map></app-esri-map> -->
